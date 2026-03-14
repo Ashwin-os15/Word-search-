@@ -1,0 +1,13 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.selCell {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 7px;
+  border: 2px solid rgba(255,255,255,0.5);
+}
