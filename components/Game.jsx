@@ -11,6 +11,7 @@ export default function Game() {
   const {
     currentLevel, coins, grid, placedWords, foundWords, levelData,
     colorMap, selectingCells, showWin, winBonus, hintCell, wrongFlash,
+    showFinalScreen, resetGame,
     startSelect, moveSelect, endSelect, goNextLevel, goPrevLevel, useHint,
   } = useGameState();
 
@@ -127,6 +128,35 @@ export default function Game() {
         winBonus={winBonus}
         onNext={goNextLevel}
       />
+
+      {/* 🎉 FINAL SCREEN - shows after level 6969 */}
+      {showFinalScreen && (
+        <div style={{
+          position: 'fixed', inset: 0, zIndex: 999,
+          display: 'flex', flexDirection: 'column',
+          alignItems: 'center', justifyContent: 'center',
+          background: '#000',
+        }}>
+          <img
+            src="/winner.jpg"
+            alt="Congratulations!"
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+          <button
+            onClick={resetGame}
+            style={{
+              position: 'absolute', bottom: 48,
+              background: 'linear-gradient(135deg,#3ecf8e,#059669)',
+              border: 'none', borderRadius: 50, padding: '16px 40px',
+              fontSize: 18, fontWeight: 800, color: '#fff',
+              cursor: 'pointer', fontFamily: 'Nunito, sans-serif',
+              boxShadow: '0 4px 24px rgba(62,207,142,0.5)',
+            }}
+          >
+            Play Again from Level 1 🔄
+          </button>
+        </div>
+      )}
     </div>
   );
 }
