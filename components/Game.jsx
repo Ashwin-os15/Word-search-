@@ -121,7 +121,7 @@ export default function Game() {
       </div>
 
       {/* Watermark */}
-      <div className={styles.watermark}>Made by Ashwin</div>
+      <div className={styles.watermark}>Made by Ashuu</div>
 
       {/* Win modal */}
       <WinModal
