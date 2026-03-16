@@ -87,26 +87,6 @@ export default function Game() {
             onMove={moveSelect}
             onEnd={endSelect}
           />
-          {/* Selection highlight overlay */}
-          {selectingCells.length > 0 && (
-            <div className={styles.selOverlay}>
-              {selectingCells.map(([r, c]) => {
-                const cs = levelData ? Math.min(46, Math.max(28, Math.floor((Math.min(window?.innerWidth || 390, 420) - 72) / levelData.size))) : 42;
-                return (
-                  <div
-                    key={`s${r}${c}`}
-                    className={styles.selCell}
-                    style={{
-                      top: r * (cs + 2) + 12,
-                      left: c * (cs + 2) + 12,
-                      width: cs,
-                      height: cs,
-                    }}
-                  />
-                );
-              })}
-            </div>
-          )}
         </div>
       </div>
 
@@ -121,7 +101,7 @@ export default function Game() {
       </div>
 
       {/* Watermark */}
-      <div className={styles.watermark}>Made by Ashuu</div>
+      <div className={styles.watermark}>Made by Ashwin</div>
 
       {/* Win modal */}
       <WinModal
